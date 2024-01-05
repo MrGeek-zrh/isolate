@@ -1,0 +1,404 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/mrgeek/document/topcxy/container/isolate/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+%.o	Makefile	/^%.o: %.c isolate.h$/;"	t
+0	compile_commands.json	/^      "\/usr\/bin\/gcc",$/;"	s	array:0.arguments
+0	compile_commands.json	/^      "\/usr\/bin\/gcc",$/;"	s	array:1.arguments
+0	compile_commands.json	/^      "\/usr\/bin\/gcc",$/;"	s	array:2.arguments
+0	compile_commands.json	/^      "\/usr\/bin\/gcc",$/;"	s	array:3.arguments
+0	compile_commands.json	/^      "\/usr\/bin\/gcc",$/;"	s	array:4.arguments
+0	compile_commands.json	/^  {$/;"	o
+1	compile_commands.json	/^      "-std=gnu99",$/;"	s	array:0.arguments
+1	compile_commands.json	/^      "-std=gnu99",$/;"	s	array:1.arguments
+1	compile_commands.json	/^      "-std=gnu99",$/;"	s	array:2.arguments
+1	compile_commands.json	/^      "-std=gnu99",$/;"	s	array:3.arguments
+1	compile_commands.json	/^      "-std=gnu99",$/;"	s	array:4.arguments
+1	compile_commands.json	/^  {$/;"	o
+10	compile_commands.json	/^      "-DCONFIG_FILE=\\"\/usr\/local\/etc\/isolate\\"",$/;"	s	array:4.arguments
+10	compile_commands.json	/^      "-DVERSION=\\"1.10.1\\"",$/;"	s	array:0.arguments
+10	compile_commands.json	/^      "-c",$/;"	s	array:1.arguments
+10	compile_commands.json	/^      "-c",$/;"	s	array:2.arguments
+10	compile_commands.json	/^      "-c",$/;"	s	array:3.arguments
+11	compile_commands.json	/^      "-DYEAR=\\"2023\\"",$/;"	s	array:0.arguments
+11	compile_commands.json	/^      "-c",$/;"	s	array:4.arguments
+11	compile_commands.json	/^      "-o",$/;"	s	array:1.arguments
+11	compile_commands.json	/^      "-o",$/;"	s	array:2.arguments
+11	compile_commands.json	/^      "-o",$/;"	s	array:3.arguments
+12	compile_commands.json	/^      "-DBUILD_DATE=\\"2024-01-03\\"",$/;"	s	array:0.arguments
+12	compile_commands.json	/^      "-o",$/;"	s	array:4.arguments
+12	compile_commands.json	/^      "cg.o",$/;"	s	array:3.arguments
+12	compile_commands.json	/^      "rules.o",$/;"	s	array:2.arguments
+12	compile_commands.json	/^      "util.o",$/;"	s	array:1.arguments
+13	compile_commands.json	/^      "-DBUILD_COMMIT=\\"c24e80f\\"",$/;"	s	array:0.arguments
+13	compile_commands.json	/^      "cg.c"$/;"	s	array:3.arguments
+13	compile_commands.json	/^      "config.o",$/;"	s	array:4.arguments
+13	compile_commands.json	/^      "rules.c"$/;"	s	array:2.arguments
+13	compile_commands.json	/^      "util.c"$/;"	s	array:1.arguments
+14	compile_commands.json	/^      "-c",$/;"	s	array:0.arguments
+14	compile_commands.json	/^      "config.c"$/;"	s	array:4.arguments
+15	compile_commands.json	/^      "-o",$/;"	s	array:0.arguments
+16	compile_commands.json	/^      "isolate.o",$/;"	s	array:0.arguments
+17	compile_commands.json	/^      "isolate.c"$/;"	s	array:0.arguments
+2	compile_commands.json	/^      "-Wall",$/;"	s	array:0.arguments
+2	compile_commands.json	/^      "-Wall",$/;"	s	array:1.arguments
+2	compile_commands.json	/^      "-Wall",$/;"	s	array:2.arguments
+2	compile_commands.json	/^      "-Wall",$/;"	s	array:3.arguments
+2	compile_commands.json	/^      "-Wall",$/;"	s	array:4.arguments
+2	compile_commands.json	/^  {$/;"	o
+3	compile_commands.json	/^      "-Wextra",$/;"	s	array:0.arguments
+3	compile_commands.json	/^      "-Wextra",$/;"	s	array:1.arguments
+3	compile_commands.json	/^      "-Wextra",$/;"	s	array:2.arguments
+3	compile_commands.json	/^      "-Wextra",$/;"	s	array:3.arguments
+3	compile_commands.json	/^      "-Wextra",$/;"	s	array:4.arguments
+3	compile_commands.json	/^  {$/;"	o
+4	compile_commands.json	/^      "-Wno-parentheses",$/;"	s	array:0.arguments
+4	compile_commands.json	/^      "-Wno-parentheses",$/;"	s	array:1.arguments
+4	compile_commands.json	/^      "-Wno-parentheses",$/;"	s	array:2.arguments
+4	compile_commands.json	/^      "-Wno-parentheses",$/;"	s	array:3.arguments
+4	compile_commands.json	/^      "-Wno-parentheses",$/;"	s	array:4.arguments
+4	compile_commands.json	/^  {$/;"	o
+5	compile_commands.json	/^      "-Wno-unused-result",$/;"	s	array:0.arguments
+5	compile_commands.json	/^      "-Wno-unused-result",$/;"	s	array:1.arguments
+5	compile_commands.json	/^      "-Wno-unused-result",$/;"	s	array:2.arguments
+5	compile_commands.json	/^      "-Wno-unused-result",$/;"	s	array:3.arguments
+5	compile_commands.json	/^      "-Wno-unused-result",$/;"	s	array:4.arguments
+6	compile_commands.json	/^      "-Wno-missing-field-initializers",$/;"	s	array:0.arguments
+6	compile_commands.json	/^      "-Wno-missing-field-initializers",$/;"	s	array:1.arguments
+6	compile_commands.json	/^      "-Wno-missing-field-initializers",$/;"	s	array:2.arguments
+6	compile_commands.json	/^      "-Wno-missing-field-initializers",$/;"	s	array:3.arguments
+6	compile_commands.json	/^      "-Wno-missing-field-initializers",$/;"	s	array:4.arguments
+7	compile_commands.json	/^      "-Wstrict-prototypes",$/;"	s	array:0.arguments
+7	compile_commands.json	/^      "-Wstrict-prototypes",$/;"	s	array:1.arguments
+7	compile_commands.json	/^      "-Wstrict-prototypes",$/;"	s	array:2.arguments
+7	compile_commands.json	/^      "-Wstrict-prototypes",$/;"	s	array:3.arguments
+7	compile_commands.json	/^      "-Wstrict-prototypes",$/;"	s	array:4.arguments
+8	compile_commands.json	/^      "-Wmissing-prototypes",$/;"	s	array:0.arguments
+8	compile_commands.json	/^      "-Wmissing-prototypes",$/;"	s	array:1.arguments
+8	compile_commands.json	/^      "-Wmissing-prototypes",$/;"	s	array:2.arguments
+8	compile_commands.json	/^      "-Wmissing-prototypes",$/;"	s	array:3.arguments
+8	compile_commands.json	/^      "-Wmissing-prototypes",$/;"	s	array:4.arguments
+9	compile_commands.json	/^      "-D_GNU_SOURCE",$/;"	s	array:0.arguments
+9	compile_commands.json	/^      "-D_GNU_SOURCE",$/;"	s	array:1.arguments
+9	compile_commands.json	/^      "-D_GNU_SOURCE",$/;"	s	array:2.arguments
+9	compile_commands.json	/^      "-D_GNU_SOURCE",$/;"	s	array:3.arguments
+9	compile_commands.json	/^      "-D_GNU_SOURCE",$/;"	s	array:4.arguments
+ARRAY_SIZE	isolate.h	/^#define ARRAY_SIZE(/;"	d
+BINDIR	Makefile	/^BINDIR = $(PREFIX)\/bin$/;"	m
+BOXDIR	Makefile	/^BOXDIR = $(VARPREFIX)\/lib\/isolate$/;"	m
+BUILD_COMMIT	Makefile	/^BUILD_COMMIT:=$(shell if git rev-parse >\/dev\/null 2>\/dev\/null ; then git describe --always -/;"	m
+BUILD_DATE	Makefile	/^BUILD_DATE:=$(shell date '+%Y-%m-%d')$/;"	m
+CC	Makefile	/^CC=gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-std=gnu99 -Wall -Wextra -Wno-parentheses -Wno-unused-result -Wno-missing-field-initializ/;"	m
+CG_BUFSIZE	cg.c	/^#define CG_BUFSIZE /;"	d	file:
+CG_CPUACCT	cg.c	/^  CG_CPUACCT,$/;"	e	enum:__anon7c9515800103	file:
+CG_CPUSET	cg.c	/^  CG_CPUSET,$/;"	e	enum:__anon7c9515800103	file:
+CG_MEMORY	cg.c	/^  CG_MEMORY = 0,$/;"	e	enum:__anon7c9515800103	file:
+CG_NUM_CONTROLLERS	cg.c	/^  CG_NUM_CONTROLLERS,$/;"	e	enum:__anon7c9515800103	file:
+CG_PARENT	cg.c	/^  CG_PARENT = 256,$/;"	e	enum:__anon7c9515800103	file:
+CONFIG	Makefile	/^CONFIG = $(CONFIGDIR)\/isolate$/;"	m
+CONFIGDIR	Makefile	/^CONFIGDIR = $(PREFIX)\/etc$/;"	m
+DATADIR	Makefile	/^DATADIR = $(DATAROOTDIR)$/;"	m
+DATAROOTDIR	Makefile	/^DATAROOTDIR = $(PREFIX)\/share$/;"	m
+DIR_FLAG_DEFAULT	rules.c	/^  DIR_FLAG_DEFAULT = 1U << 15,  \/\/ Used internally$/;"	e	enum:dir_rule_flags	file:
+DIR_FLAG_DEV	rules.c	/^  DIR_FLAG_DEV = 16,$/;"	e	enum:dir_rule_flags	file:
+DIR_FLAG_DISABLED	rules.c	/^  DIR_FLAG_DISABLED = 1U << 16, \/\/ Used internally$/;"	e	enum:dir_rule_flags	file:
+DIR_FLAG_FS	rules.c	/^  DIR_FLAG_FS = 4,$/;"	e	enum:dir_rule_flags	file:
+DIR_FLAG_MAYBE	rules.c	/^  DIR_FLAG_MAYBE = 8,$/;"	e	enum:dir_rule_flags	file:
+DIR_FLAG_NOEXEC	rules.c	/^  DIR_FLAG_NOEXEC = 2,$/;"	e	enum:dir_rule_flags	file:
+DIR_FLAG_NOREC	rules.c	/^  DIR_FLAG_NOREC = 64,$/;"	e	enum:dir_rule_flags	file:
+DIR_FLAG_RW	rules.c	/^  DIR_FLAG_RW = 1,$/;"	e	enum:dir_rule_flags	file:
+DIR_FLAG_TMP	rules.c	/^  DIR_FLAG_TMP = 32,$/;"	e	enum:dir_rule_flags	file:
+EOT	isolate-check-environment	/^    cat <<EOT >&2$/;"	h
+FOREACH_CG_CONTROLLER	cg.c	/^#define FOREACH_CG_CONTROLLER(/;"	d	file:
+LIBS	Makefile	/^LIBS=-lcap$/;"	m
+MAN1DIR	Makefile	/^MAN1DIR = $(MANDIR)\/man1$/;"	m
+MANDIR	Makefile	/^MANDIR = $(DATADIR)\/man$/;"	m
+MAX_LINE_LEN	config.c	/^#define MAX_LINE_LEN /;"	d	file:
+MS_PRIVATE	isolate.c	/^#define MS_PRIVATE /;"	d	file:
+MS_REC	isolate.c	/^#define MS_REC /;"	d	file:
+NONRET	isolate.h	/^#define NONRET /;"	d
+OPT_CG	isolate.c	/^  OPT_CG,$/;"	e	enum:opt_code	file:
+OPT_CG_MEM	isolate.c	/^  OPT_CG_MEM,$/;"	e	enum:opt_code	file:
+OPT_CG_TIMING	isolate.c	/^  OPT_CG_TIMING,$/;"	e	enum:opt_code	file:
+OPT_CLEANUP	isolate.c	/^  OPT_CLEANUP,$/;"	e	enum:opt_code	file:
+OPT_CORE	isolate.c	/^  OPT_CORE,$/;"	e	enum:opt_code	file:
+OPT_INHERIT_FDS	isolate.c	/^  OPT_INHERIT_FDS,$/;"	e	enum:opt_code	file:
+OPT_INIT	isolate.c	/^  OPT_INIT = 256,$/;"	e	enum:opt_code	file:
+OPT_NO_CG_TIMING	isolate.c	/^  OPT_NO_CG_TIMING,$/;"	e	enum:opt_code	file:
+OPT_RUN	isolate.c	/^  OPT_RUN,$/;"	e	enum:opt_code	file:
+OPT_SHARE_NET	isolate.c	/^  OPT_SHARE_NET,$/;"	e	enum:opt_code	file:
+OPT_SPECIAL_FILES	isolate.c	/^  OPT_SPECIAL_FILES,$/;"	e	enum:opt_code	file:
+OPT_STDERR_TO_STDOUT	isolate.c	/^  OPT_STDERR_TO_STDOUT,$/;"	e	enum:opt_code	file:
+OPT_TTY_HACK	isolate.c	/^  OPT_TTY_HACK,$/;"	e	enum:opt_code	file:
+OPT_VERSION	isolate.c	/^  OPT_VERSION,$/;"	e	enum:opt_code	file:
+PREFIX	Makefile	/^PREFIX = $(DESTDIR)\/usr\/local$/;"	m
+PROC_BUF_SIZE	isolate.c	/^#define PROC_BUF_SIZE /;"	d	file:
+RLIM	isolate.c	/^#define RLIM(/;"	d	file:
+SIGNAL_FATAL	isolate.c	/^  enum { SIGNAL_IGNORE, SIGNAL_INTERRUPT, SIGNAL_FATAL } action;$/;"	e	enum:signal_rule::__anon3e4399870103	file:
+SIGNAL_IGNORE	isolate.c	/^  enum { SIGNAL_IGNORE, SIGNAL_INTERRUPT, SIGNAL_FATAL } action;$/;"	e	enum:signal_rule::__anon3e4399870103	file:
+SIGNAL_INTERRUPT	isolate.c	/^  enum { SIGNAL_IGNORE, SIGNAL_INTERRUPT, SIGNAL_FATAL } action;$/;"	e	enum:signal_rule::__anon3e4399870103	file:
+TIMER_INTERVAL_US	isolate.c	/^#define TIMER_INTERVAL_US /;"	d	file:
+UNUSED	isolate.h	/^#define UNUSED /;"	d
+VARPREFIX	Makefile	/^VARPREFIX = $(DESTDIR)\/var\/local$/;"	m
+VERSION	Makefile	/^VERSION=1.10.1$/;"	m
+YEAR	Makefile	/^YEAR=2023$/;"	m
+__anon3e4399870103	isolate.c	/^  enum { SIGNAL_IGNORE, SIGNAL_INTERRUPT, SIGNAL_FATAL } action;$/;"	g	struct:signal_rule	file:
+__anon7c9515800103	cg.c	/^typedef enum {$/;"	g	file:
+_basic_options	isolate.1.xml	/^<refsect1 id="_basic_options">$/;"	i
+_control_groups	isolate.1.xml	/^<refsect1 id="_control_groups">$/;"	i
+_description	isolate.1.xml	/^<refsect1 id="_description">$/;"	i
+_directory_rules	isolate.1.xml	/^<refsect1 id="_directory_rules">$/;"	i
+_environment_rules	isolate.1.xml	/^<refsect1 id="_environment_rules">$/;"	i
+_installation	isolate.1.xml	/^<refsect1 id="_installation">$/;"	i
+_license	isolate.1.xml	/^<refsect1 id="_license">$/;"	i
+_limits	isolate.1.xml	/^<refsect1 id="_limits">$/;"	i
+_meta_files	isolate.1.xml	/^<refsect1 id="_meta_files">$/;"	i
+_reproducibility	isolate.1.xml	/^<refsect1 id="_reproducibility">$/;"	i
+_return_value	isolate.1.xml	/^<refsect1 id="_return_value">$/;"	i
+_special_options	isolate.1.xml	/^<refsect1 id="_special_options">$/;"	i
+_synopsis	isolate.1.xml	/^<refsynopsisdiv id="_synopsis">$/;"	i
+action	isolate-check-environment	/^action() {$/;"	f
+action	isolate.c	/^  enum { SIGNAL_IGNORE, SIGNAL_INTERRUPT, SIGNAL_FATAL } action;$/;"	m	struct:signal_rule	typeref:enum:signal_rule::__anon3e4399870103	file:
+add_dir_rule	rules.c	/^static int add_dir_rule(char *in, char *out, unsigned int flags) {$/;"	f	typeref:typename:int	file:
+all	Makefile	/^all: isolate isolate.1 isolate.1.html isolate-check-environment$/;"	t
+apply_dir_rules	rules.c	/^void apply_dir_rules(int with_defaults) {$/;"	f	typeref:typename:void
+apply_env_rule	rules.c	/^static void apply_env_rule(char **env, int *env_sizep, struct env_rule *r) {$/;"	f	typeref:typename:void	file:
+arguments	compile_commands.json	/^    "arguments": [$/;"	a	object:0
+arguments	compile_commands.json	/^    "arguments": [$/;"	a	object:1
+arguments	compile_commands.json	/^    "arguments": [$/;"	a	object:2
+arguments	compile_commands.json	/^    "arguments": [$/;"	a	object:3
+arguments	compile_commands.json	/^    "arguments": [$/;"	a	object:4
+aslr_check	isolate-check-environment	/^aslr_check() {$/;"	f
+block_quota	isolate.c	/^int block_quota;$/;"	v	typeref:typename:int
+box_dir	isolate.c	/^static char box_dir[1024];$/;"	v	typeref:typename:char[1024]	file:
+box_exit	isolate.c	/^static void NONRET box_exit(int rc) {$/;"	f	typeref:typename:void NONRET	file:
+box_gid	isolate.c	/^gid_t box_gid;$/;"	v	typeref:typename:gid_t
+box_id	isolate.c	/^int box_id;$/;"	v	typeref:typename:int
+box_id	isolate.h	/^  int box_id;$/;"	m	struct:cf_per_box	typeref:typename:int
+box_init	isolate.c	/^static void box_init(void) {$/;"	f	typeref:typename:void	file:
+box_inside	isolate.c	/^static int box_inside(char **args) {$/;"	f	typeref:typename:int	file:
+box_keeper	isolate.c	/^static void box_keeper(void) {$/;"	f	typeref:typename:void	file:
+box_pid	isolate.c	/^static pid_t box_pid;$/;"	v	typeref:typename:pid_t	file:
+box_proxy	isolate.c	/^static int box_proxy(void *arg) {$/;"	f	typeref:typename:int	file:
+box_uid	isolate.c	/^uid_t box_uid;$/;"	v	typeref:typename:uid_t
+callback	util.c	/^  void (*callback)(struct walk_context *ctx);$/;"	m	struct:walk_context	typeref:typename:void (*)(struct walk_context * ctx)	file:
+cf_box_root	config.c	/^char *cf_box_root;$/;"	v	typeref:typename:char *
+cf_cg_parent	config.c	/^char *cf_cg_parent;$/;"	v	typeref:typename:char *
+cf_cg_root	config.c	/^char *cf_cg_root;$/;"	v	typeref:typename:char *
+cf_check	config.c	/^static void cf_check(void) {$/;"	f	typeref:typename:void	file:
+cf_current_box	config.c	/^struct cf_per_box *cf_current_box(void) { return cf_per_box(box_id); }$/;"	f	typeref:struct:cf_per_box *
+cf_entry	config.c	/^static void cf_entry(char *key, char *val) {$/;"	f	typeref:typename:void	file:
+cf_entry_compound	config.c	/^static void cf_entry_compound(char *key, char *subkey, char *val) {$/;"	f	typeref:typename:void	file:
+cf_entry_toplevel	config.c	/^static void cf_entry_toplevel(char *key, char *val) {$/;"	f	typeref:typename:void	file:
+cf_err	config.c	/^static void NONRET cf_err(char *msg) {$/;"	f	typeref:typename:void NONRET	file:
+cf_first_gid	config.c	/^int cf_first_gid;$/;"	v	typeref:typename:int
+cf_first_uid	config.c	/^int cf_first_uid;$/;"	v	typeref:typename:int
+cf_int	config.c	/^static int cf_int(char *val) {$/;"	f	typeref:typename:int	file:
+cf_num_boxes	config.c	/^int cf_num_boxes;$/;"	v	typeref:typename:int
+cf_parse	config.c	/^void cf_parse(void) {$/;"	f	typeref:typename:void
+cf_per_box	config.c	/^struct cf_per_box *cf_per_box(int box_id) {$/;"	f	typeref:struct:cf_per_box *
+cf_per_box	isolate.h	/^struct cf_per_box {$/;"	s
+cf_string	config.c	/^static char *cf_string(char *val) { return xstrdup(val); }$/;"	f	typeref:typename:char *	file:
+cg_controller	cg.c	/^} cg_controller;$/;"	t	typeref:enum:__anon7c9515800103	file:
+cg_controller_desc	cg.c	/^struct cg_controller_desc {$/;"	s	file:
+cg_controller_name	cg.c	/^static const char *cg_controller_name(cg_controller c) {$/;"	f	typeref:typename:const char *	file:
+cg_controller_optional	cg.c	/^static int cg_controller_optional(cg_controller c) {$/;"	f	typeref:typename:int	file:
+cg_controllers	cg.c	/^static const struct cg_controller_desc cg_controllers[CG_NUM_CONTROLLERS + 1] =$/;"	v	typeref:typename:const struct cg_controller_desc[]	file:
+cg_enable	isolate.c	/^int cg_enable;$/;"	v	typeref:typename:int
+cg_enter	cg.c	/^void cg_enter(void) {$/;"	f	typeref:typename:void
+cg_get_run_time_ms	cg.c	/^int cg_get_run_time_ms(void) {$/;"	f	typeref:typename:int
+cg_init	cg.c	/^void cg_init(void) {$/;"	f	typeref:typename:void
+cg_makepath	cg.c	/^static void cg_makepath(char *buf, size_t len, cg_controller c,$/;"	f	typeref:typename:void	file:
+cg_memory_limit	isolate.c	/^int cg_memory_limit;$/;"	v	typeref:typename:int
+cg_name	cg.c	/^static char cg_name[256];$/;"	v	typeref:typename:char[256]	file:
+cg_parent_name	cg.c	/^static char cg_parent_name[256];$/;"	v	typeref:typename:char[256]	file:
+cg_prepare	cg.c	/^void cg_prepare(void) {$/;"	f	typeref:typename:void
+cg_read	cg.c	/^static int cg_read(cg_controller controller, const char *attr, char *buf) {$/;"	f	typeref:typename:int	file:
+cg_remove	cg.c	/^void cg_remove(void) {$/;"	f	typeref:typename:void
+cg_stats	cg.c	/^void cg_stats(void) {$/;"	f	typeref:typename:void
+cg_timing	isolate.c	/^int cg_timing = 1;$/;"	v	typeref:typename:int
+cg_write	cg.c	/^cg_write(cg_controller controller, const char *attr, const char *fmt, ...) {$/;"	f	typeref:typename:void	file:
+cgroup_check	isolate-check-environment	/^cgroup_check() {$/;"	f
+check_timeout	isolate.c	/^static void check_timeout(void) {$/;"	f	typeref:typename:void	file:
+chown_gid	util.c	/^  gid_t chown_gid;$/;"	m	struct:walk_context	typeref:typename:gid_t	file:
+chown_uid	util.c	/^  uid_t chown_uid;$/;"	m	struct:walk_context	typeref:typename:uid_t	file:
+chowntree	util.c	/^void chowntree(char *path, uid_t uid, gid_t gid, bool keep_special_files) {$/;"	f	typeref:typename:void
+chowntree_helper	util.c	/^static void chowntree_helper(struct walk_context *ctx) {$/;"	f	typeref:typename:void	file:
+clean	Makefile	/^clean:$/;"	t
+cleanup	isolate.c	/^static void cleanup(void) {$/;"	f	typeref:typename:void	file:
+cleanup_ownership	isolate.c	/^static int cleanup_ownership;$/;"	v	typeref:typename:int	file:
+close_all_fds	util.c	/^void close_all_fds(void) {$/;"	f	typeref:typename:void
+config.o	Makefile	/^config.o: CFLAGS += -DCONFIG_FILE='"$(CONFIG)"'$/;"	t
+core_limit	isolate.c	/^static int core_limit;$/;"	v	typeref:typename:int	file:
+cpufreq_check	isolate-check-environment	/^cpufreq_check() {$/;"	f
+cpus	isolate.h	/^  char *cpus;$/;"	m	struct:cf_per_box	typeref:typename:char *
+default_dirs	isolate.c	/^static int default_dirs = 1;$/;"	v	typeref:typename:int	file:
+default_env_rules	rules.c	/^static struct env_rule default_env_rules[] = {$/;"	v	typeref:struct:env_rule[]	file:
+die	isolate.c	/^void NONRET __attribute__((format(printf, 1, 2))) die(char *msg, ...) {$/;"	f	typeref:typename:void NONRET
+dir_exists	util.c	/^int dir_exists(char *path) {$/;"	f	typeref:typename:int
+dir_fd	util.c	/^  int dir_fd;$/;"	m	struct:walk_context	typeref:typename:int	file:
+dir_flag_names	rules.c	/^static const char *const dir_flag_names[] = {"rw",  "noexec", "fs",   "maybe",$/;"	v	typeref:typename:const char * const[]	file:
+dir_rule	rules.c	/^struct dir_rule {$/;"	s	file:
+dir_rule_flags	rules.c	/^enum dir_rule_flags {$/;"	g	file:
+directory	compile_commands.json	/^    "directory": "\/home\/mrgeek\/document\/topcxy\/container\/isolate",$/;"	s	object:0
+directory	compile_commands.json	/^    "directory": "\/home\/mrgeek\/document\/topcxy\/container\/isolate",$/;"	s	object:1
+directory	compile_commands.json	/^    "directory": "\/home\/mrgeek\/document\/topcxy\/container\/isolate",$/;"	s	object:2
+directory	compile_commands.json	/^    "directory": "\/home\/mrgeek\/document\/topcxy\/container\/isolate",$/;"	s	object:3
+directory	compile_commands.json	/^    "directory": "\/home\/mrgeek\/document\/topcxy\/container\/isolate",$/;"	s	object:4
+env_rule	rules.c	/^struct env_rule {$/;"	s	file:
+err	isolate.c	/^void NONRET __attribute__((format(printf, 1, 2))) err(char *msg, ...) {$/;"	f	typeref:typename:void NONRET
+error_pipes	isolate.c	/^static int error_pipes[2];$/;"	v	typeref:typename:int[2]	file:
+extra_timeout	isolate.c	/^static int extra_timeout;$/;"	v	typeref:typename:int	file:
+fd_to_keep	util.c	/^static int fd_to_keep = -1;$/;"	v	typeref:typename:int	file:
+file	compile_commands.json	/^    "file": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/cg.c",$/;"	s	object:3
+file	compile_commands.json	/^    "file": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/config.c",$/;"	s	object:4
+file	compile_commands.json	/^    "file": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/isolate.c",$/;"	s	object:0
+file	compile_commands.json	/^    "file": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/rules.c",$/;"	s	object:2
+file	compile_commands.json	/^    "file": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/util.c",$/;"	s	object:1
+final_stats	isolate.c	/^static void final_stats(struct rusage *rus) {$/;"	f	typeref:typename:void	file:
+find_box_pid	isolate.c	/^static void find_box_pid(void) {$/;"	f	typeref:typename:void	file:
+find_device	rules.c	/^static char *find_device(char *path) {$/;"	f	typeref:typename:char *	file:
+first_dir_rule	rules.c	/^static struct dir_rule *first_dir_rule;$/;"	v	typeref:struct:dir_rule *	file:
+first_env_rule	rules.c	/^static struct env_rule *first_env_rule;$/;"	v	typeref:struct:env_rule *	file:
+flags	rules.c	/^  unsigned int flags; \/\/ DIR_FLAG_xxx$/;"	m	struct:dir_rule	typeref:typename:unsigned int	file:
+flush_line	isolate.c	/^static void flush_line(void) {$/;"	f	typeref:typename:void	file:
+fsize_limit	isolate.c	/^static int fsize_limit;$/;"	v	typeref:typename:int	file:
+general_boost_check	isolate-check-environment	/^general_boost_check() {$/;"	f
+get_run_time_ms	isolate.c	/^static int get_run_time_ms(struct rusage *rus) {$/;"	f	typeref:typename:int	file:
+get_wall_time_ms	isolate.c	/^static int get_wall_time_ms(void) {$/;"	f	typeref:typename:int	file:
+inherit_fds	isolate.c	/^static int inherit_fds;$/;"	v	typeref:typename:int	file:
+init	isolate.c	/^static void init(void) {$/;"	f	typeref:typename:void	file:
+init_dir_rules	rules.c	/^void init_dir_rules(void) {$/;"	f	typeref:typename:void
+inode_quota	isolate.c	/^int inode_quota;$/;"	v	typeref:typename:int
+inside	rules.c	/^  char *inside;  \/\/ A relative path$/;"	m	struct:dir_rule	typeref:typename:char *	file:
+install	Makefile	/^install: isolate isolate-check-environment$/;"	t
+install-doc	Makefile	/^install-doc: isolate.1$/;"	t
+intel_boost_check	isolate-check-environment	/^intel_boost_check() {$/;"	f
+interrupt	isolate.c	/^static volatile sig_atomic_t timer_tick, interrupt;$/;"	v	typeref:typename:volatile sig_atomic_t	file:
+is_dir	util.c	/^  bool is_dir;$/;"	m	struct:walk_context	typeref:typename:bool	file:
+isolate	Makefile	/^isolate: isolate.o util.o rules.o cg.o config.o$/;"	t
+isolate	README.md	/^isolate$/;"	c
+isolate.1	Makefile	/^isolate.1: isolate.1.txt$/;"	t
+isolate.1.html	Makefile	/^isolate.1.html: isolate.1.txt isolate.1$/;"	t
+isolate.o	Makefile	/^isolate.o: CFLAGS += -DVERSION='"$(VERSION)"' -DYEAR='"$(YEAR)"' -DBUILD_DATE='"$(BUILD_DATE)"' /;"	t
+keep_special_files	util.c	/^  bool keep_special_files;$/;"	m	struct:walk_context	typeref:typename:bool	file:
+last_dir_rule	rules.c	/^static struct dir_rule **last_dir_rule = &first_dir_rule;$/;"	v	typeref:struct:dir_rule **	file:
+last_env_rule	rules.c	/^static struct env_rule **last_env_rule = &first_env_rule;$/;"	v	typeref:struct:env_rule **	file:
+line_number	config.c	/^static int line_number;$/;"	v	typeref:typename:int	file:
+long_opts	isolate.c	/^static const struct option long_opts[] = {$/;"	v	typeref:typename:const struct option[]	file:
+main	isolate.c	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
+make_dir	util.c	/^void make_dir(char *path) {$/;"	f	typeref:typename:void
+match_env_var	rules.c	/^static int match_env_var(char *env_entry, struct env_rule *r) {$/;"	f	typeref:typename:int	file:
+max_processes	isolate.c	/^static int max_processes = 1;$/;"	v	typeref:typename:int	file:
+memory_limit	isolate.c	/^static int memory_limit;$/;"	v	typeref:typename:int	file:
+mems	isolate.h	/^  char *mems;$/;"	m	struct:cf_per_box	typeref:typename:char *
+meta_close	util.c	/^void meta_close(void) {$/;"	f	typeref:typename:void
+meta_open	util.c	/^void meta_open(const char *name) {$/;"	f	typeref:typename:void
+meta_printf	util.c	/^void meta_printf(const char *fmt, ...) {$/;"	f	typeref:typename:void
+metafile	util.c	/^static FILE *metafile;$/;"	v	typeref:typename:FILE *	file:
+msg	isolate.c	/^void __attribute__((format(printf, 1, 2))) msg(char *msg, ...) {$/;"	f	typeref:typename:void
+name	cg.c	/^  const char *name;$/;"	m	struct:cg_controller_desc	typeref:typename:const char *	file:
+name	util.c	/^  const char *name;$/;"	m	struct:walk_context	typeref:typename:const char *	file:
+next	isolate.h	/^  struct cf_per_box *next;$/;"	m	struct:cf_per_box	typeref:struct:cf_per_box *
+next	rules.c	/^  struct dir_rule *next;$/;"	m	struct:dir_rule	typeref:struct:dir_rule *	file:
+next	rules.c	/^  struct env_rule *next;$/;"	m	struct:env_rule	typeref:struct:env_rule *	file:
+open_file_limit	isolate.c	/^static int open_file_limit = 64;$/;"	v	typeref:typename:int	file:
+opt_code	isolate.c	/^enum opt_code {$/;"	g	file:
+opt_uint	isolate.c	/^static unsigned int opt_uint(char *val) {$/;"	f	typeref:typename:unsigned int	file:
+optional	cg.c	/^  int optional;$/;"	m	struct:cg_controller_desc	typeref:typename:int	file:
+orig_gid	isolate.c	/^gid_t orig_gid;$/;"	v	typeref:typename:gid_t
+orig_uid	isolate.c	/^uid_t orig_uid;$/;"	v	typeref:typename:uid_t
+output	compile_commands.json	/^    "output": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/cg.o"$/;"	s	object:3
+output	compile_commands.json	/^    "output": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/config.o"$/;"	s	object:4
+output	compile_commands.json	/^    "output": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/isolate.o"$/;"	s	object:0
+output	compile_commands.json	/^    "output": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/rules.o"$/;"	s	object:2
+output	compile_commands.json	/^    "output": "\/home\/mrgeek\/document\/topcxy\/container\/isolate\/util.o"$/;"	s	object:1
+outside	rules.c	/^  char *outside; \/\/ This can be an absolute path or a relative path starting$/;"	m	struct:dir_rule	typeref:typename:char *	file:
+parse_dir_option	rules.c	/^static unsigned int parse_dir_option(char *opt) {$/;"	f	typeref:typename:unsigned int	file:
+partial_line	isolate.c	/^static int partial_line;$/;"	v	typeref:typename:int	file:
+pass_environ	isolate.c	/^int pass_environ;$/;"	v	typeref:typename:int
+path_begins_with	rules.c	/^static int path_begins_with(char *path, char *with) {$/;"	f	typeref:typename:int	file:
+per_box_configs	config.c	/^static struct cf_per_box *per_box_configs;$/;"	v	typeref:struct:cf_per_box *	file:
+print_dubious	isolate-check-environment	/^print_dubious() {$/;"	f
+print_fail	isolate-check-environment	/^print_fail() {$/;"	f
+print_finish	isolate-check-environment	/^print_finish() {$/;"	f
+print_skipped	isolate-check-environment	/^print_skipped() {$/;"	f
+print_start_check	isolate-check-environment	/^print_start_check() {$/;"	f
+proxy_pid	isolate.c	/^static pid_t proxy_pid;$/;"	v	typeref:typename:pid_t	file:
+quiet	isolate-check-environment	/^quiet() {$/;"	f
+read_errors_from_fd	isolate.c	/^static int read_errors_from_fd;$/;"	v	typeref:typename:int	file:
+read_proc_file	isolate.c	/^static int read_proc_file(char *buf, char *name, int *fdp) {$/;"	f	typeref:typename:int	file:
+redir_stderr	isolate.c	/^static char *redir_stdin, *redir_stdout, *redir_stderr;$/;"	v	typeref:typename:char *	file:
+redir_stderr_to_stdout	isolate.c	/^static int redir_stderr_to_stdout;$/;"	v	typeref:typename:int	file:
+redir_stdin	isolate.c	/^static char *redir_stdin, *redir_stdout, *redir_stderr;$/;"	v	typeref:typename:char *	file:
+redir_stdout	isolate.c	/^static char *redir_stdin, *redir_stdout, *redir_stderr;$/;"	v	typeref:typename:char *	file:
+release	Makefile	/^release: isolate.1.html$/;"	t
+reset_signals	isolate.c	/^static void reset_signals(void) {$/;"	f	typeref:typename:void	file:
+rmtree	util.c	/^void rmtree(char *path) {$/;"	f	typeref:typename:void
+rmtree_helper	util.c	/^static void rmtree_helper(struct walk_context *ctx) {$/;"	f	typeref:typename:void	file:
+root_dev	util.c	/^  dev_t root_dev;$/;"	m	struct:walk_context	typeref:typename:dev_t	file:
+run	isolate.c	/^static void run(char **argv) {$/;"	f	typeref:typename:void	file:
+sanitize_dir_path	rules.c	/^static char *sanitize_dir_path(char *path) {$/;"	f	typeref:typename:char *	file:
+self_name	isolate.c	/^static const char *self_name(void) {$/;"	f	typeref:typename:const char *	file:
+set_cap_sys_admin	rules.c	/^static void set_cap_sys_admin(void) {$/;"	f	typeref:typename:void	file:
+set_cwd	isolate.c	/^static char *set_cwd;$/;"	v	typeref:typename:char *	file:
+set_dir_action	rules.c	/^int set_dir_action(char *arg) { return set_dir_action_ext(arg, 0); }$/;"	f	typeref:typename:int
+set_dir_action_default	rules.c	/^static int set_dir_action_default(char *arg) {$/;"	f	typeref:typename:int	file:
+set_dir_action_ext	rules.c	/^static int set_dir_action_ext(char *arg, unsigned int ext_flags) {$/;"	f	typeref:typename:int	file:
+set_env_action	rules.c	/^int set_env_action(char *a0) {$/;"	f	typeref:typename:int
+set_quota	rules.c	/^void set_quota(void) {$/;"	f	typeref:typename:void
+setup_credentials	isolate.c	/^static void setup_credentials(void) {$/;"	f	typeref:typename:void	file:
+setup_environment	rules.c	/^char **setup_environment(void) {$/;"	f	typeref:typename:char **
+setup_fds	isolate.c	/^static void setup_fds(void) {$/;"	f	typeref:typename:void	file:
+setup_net	isolate.c	/^static void setup_net(void) {$/;"	f	typeref:typename:void	file:
+setup_orig_credentials	isolate.c	/^static void setup_orig_credentials(void) {$/;"	f	typeref:typename:void	file:
+setup_pipe	isolate.c	/^static void setup_pipe(int *fds, int nonblocking) {$/;"	f	typeref:typename:void	file:
+setup_rlim	isolate.c	/^static void setup_rlim(const char *res_name, int res, rlim_t limit) {$/;"	f	typeref:typename:void	file:
+setup_rlimits	isolate.c	/^static void setup_rlimits(void) {$/;"	f	typeref:typename:void	file:
+setup_root	isolate.c	/^static void setup_root(void) {$/;"	f	typeref:typename:void	file:
+setup_signals	isolate.c	/^static void setup_signals(void) {$/;"	f	typeref:typename:void	file:
+share_net	isolate.c	/^static int share_net;$/;"	v	typeref:typename:int	file:
+short_opts	isolate.c	/^static const char short_opts[] = "b:c:d:DeE:f:i:k:m:M:n:o:p::q:r:st:vw:x:";$/;"	v	typeref:typename:const char[]	file:
+show_version	isolate.c	/^static void show_version(void) {$/;"	f	typeref:typename:void	file:
+signal_alarm	isolate.c	/^static void signal_alarm(int unused UNUSED) {$/;"	f	typeref:typename:void	file:
+signal_fatal	isolate.c	/^static void signal_fatal(int signum) {$/;"	f	typeref:typename:void	file:
+signal_int	isolate.c	/^static void signal_int(int signum) {$/;"	f	typeref:typename:void	file:
+signal_rule	isolate.c	/^struct signal_rule {$/;"	s	file:
+signal_rules	isolate.c	/^static const struct signal_rule signal_rules[] = {$/;"	v	typeref:typename:const struct signal_rule[]	file:
+signum	isolate.c	/^  int signum;$/;"	m	struct:signal_rule	typeref:typename:int	file:
+silent	isolate.c	/^static int silent;$/;"	v	typeref:typename:int	file:
+special_files	isolate.c	/^static bool special_files;$/;"	v	typeref:typename:bool	file:
+st	util.c	/^  struct stat st;$/;"	m	struct:walk_context	typeref:struct:stat	file:
+stack_limit	isolate.c	/^static int stack_limit;$/;"	v	typeref:typename:int	file:
+start_time	isolate.c	/^static struct timeval start_time;$/;"	v	typeref:struct:timeval	file:
+status_pipes	isolate.c	/^static int status_pipes[2];$/;"	v	typeref:typename:int[2]	file:
+swap_check	isolate-check-environment	/^swap_check() {$/;"	f
+thp_check	isolate-check-environment	/^thp_check() {$/;"	f
+ticks_per_sec	isolate.c	/^static int ticks_per_sec;$/;"	v	typeref:typename:int	file:
+timeout	isolate.c	/^static int timeout; \/* milliseconds *\/$/;"	v	typeref:typename:int	file:
+timer_tick	isolate.c	/^static volatile sig_atomic_t timer_tick, interrupt;$/;"	v	typeref:typename:volatile sig_atomic_t	file:
+total_ms	isolate.c	/^static int total_ms, wall_ms;$/;"	v	typeref:typename:int	file:
+tty_hack	isolate.c	/^static int tty_hack;$/;"	v	typeref:typename:int	file:
+usage	isolate-check-environment	/^usage() {$/;"	f
+usage	isolate.c	/^static void __attribute__((format(printf, 1, 2))) usage(const char *msg, ...) {$/;"	f	typeref:typename:void	file:
+val	rules.c	/^  char *val; \/\/ ""=clear, NULL=inherit$/;"	m	struct:env_rule	typeref:typename:char *	file:
+var	rules.c	/^  char *var; \/\/ Variable to match$/;"	m	struct:env_rule	typeref:typename:char *	file:
+var_len	rules.c	/^  int var_len;$/;"	m	struct:env_rule	typeref:typename:int	file:
+verbose	isolate.c	/^int verbose;$/;"	v	typeref:typename:int
+walk_context	util.c	/^struct walk_context {$/;"	s	file:
+walktree	util.c	/^static void walktree(struct walk_context *ctx, const char *path,$/;"	f	typeref:typename:void	file:
+walktree_ctx	util.c	/^static void walktree_ctx(struct walk_context *ctx) {$/;"	f	typeref:typename:void	file:
+wall_ms	isolate.c	/^static int total_ms, wall_ms;$/;"	v	typeref:typename:int	file:
+wall_timeout	isolate.c	/^static int wall_timeout;$/;"	v	typeref:typename:int	file:
+warn	isolate-check-environment	/^warn() {$/;"	f
+write_errors_to_fd	isolate.c	/^static int write_errors_to_fd;$/;"	v	typeref:typename:int	file:
+xmalloc	util.c	/^void *xmalloc(size_t size) {$/;"	f	typeref:typename:void *
+xstrdup	util.c	/^char *xstrdup(char *str) {$/;"	f	typeref:typename:char *

@@ -1,5 +1,9 @@
 docbook-xsl.css
 isolate
 isolate.1
+isolate.1.txt
 isolate.1.html
+isolate.1.xml
 *.o
+*.pdf
+*.json
