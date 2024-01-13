@@ -92,6 +92,7 @@ static void apply_env_rule(char **env, int *env_sizep, struct env_rule *r) {
   env[*env_sizep] = NULL;
 }
 
+// 设置环境变量
 char **setup_environment(void) {
   // Link built-in rules with user rules
   for (int i = ARRAY_SIZE(default_env_rules) - 1; i >= 0; i--) {

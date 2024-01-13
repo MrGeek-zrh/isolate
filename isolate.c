@@ -526,9 +526,14 @@ static void setup_root(void) {
   if (mount("none", "root", "tmpfs", 0, "mode=755") < 0)
     die("Cannot mount root ramdisk: %m");
 
+  /**
+   *Unless --no-default-dirs is specified, the default set of directory rules
+   *binds /bin, /dev (with devices allowed), /lib, /lib64 (if it exists), and
+   * /usr. It also binds the working directory to /box (read-write), mounts the
+   *proc filesystem at /proc, and creates a temporary directory /tmp.
+   */
   apply_dir_rules(default_dirs);
 
-  // 将/var/local/lib/isolate/0/root设置为当前用户进程能够使用的系统根目录
   if (chroot("root") < 0)
     die("Chroot failed: %m");
 
@@ -632,8 +637,7 @@ static void setup_rlimits(void) {
 static int box_inside(char **args) {
   // 正式执行用户进程之前的一些初始化工作
   cg_enter();
-  // 设置当前用户进程的root目录。
-  // 使用chroot实现：将root文件夹设置为用户进程的系统跟目录
+  // 创建/var/local/bin/isolate/0/root 文件夹
   // 这里挂载的文件系统只能在box_gid和box_uid的权限下才能看到
   setup_root();
   // TODO:设置网络
@@ -641,6 +645,7 @@ static int box_inside(char **args) {
   setup_rlimits();
   setup_credentials();
   setup_fds();
+  // 设置环境变量
   char **env = setup_environment();
 
   if (set_cwd && chdir(set_cwd))
@@ -652,9 +657,12 @@ static int box_inside(char **args) {
 }
 
 /*** Proxy ***/
-
+/**
+ * 设置容器代理进程的gid、uid
+ */
 static void setup_orig_credentials(void) {
   if (setresgid(orig_gid, orig_gid, orig_gid) < 0)
+    // 清空了进程的附加组ID列表
     die("setresgid: %m");
   if (setgroups(0, NULL) < 0)
     die("setgroups: %m");
@@ -717,6 +725,7 @@ static void box_init(void) {
   // 创建沙箱对应的文件夹:/var/local/lib/isolate/0/
   snprintf(box_dir, sizeof(box_dir), "%s/%d", cf_box_root, box_id);
   make_dir(box_dir);
+  // 改变当前工作目录到/var/local/lib/isolate/0/
   if (chdir(box_dir) < 0)
     die("chdir(%s): %m", box_dir);
 }
@@ -729,16 +738,20 @@ static const char *self_name(void) {
 
 static void init(void) {
   msg("Preparing sandbox directory\n");
+  // 创建box文件夹
   if (mkdir("box", 0700) < 0) {
     if (errno == EEXIST)
       die("Box already exists, run `%s --cleanup' first", self_name());
     else
       die("Cannot create box: %m");
   }
+  // 将box文件夹的uid gid全修改为0
   if (chown("box", orig_uid, orig_gid) < 0)
     die("Cannot chown box: %m");
 
+  // cgroup相关，暂时不看
   cg_prepare();
+  // 设置磁盘配额
   set_quota();
 
   puts(box_dir);
@@ -811,7 +824,6 @@ static void run(char **argv) {
 
   // 效果类始于 chown -R box_uid:box_gid box
   // 一个uid实际上就是对应了一种权限
-  // TODO: 有一个疑问，box前面的路径是什么时候进入的？
   chowntree("box", box_uid, box_gid, false);
   cleanup_ownership = 1;
 
@@ -822,7 +834,7 @@ static void run(char **argv) {
   // setup_pipe(status_pipes, 0): 创建一个普通的阻塞管道，用于状态信息。
   setup_pipe(status_pipes, 0);
 
-  // 设置isolate对各种信号的处理
+  // 这里实际上不太懂设置isolate对各种信号的处理
   setup_signals();
 
   // 创建了一个新的进程（称为代理进程或
@@ -830,14 +842,20 @@ static void run(char **argv) {
   // 根据代码来看，proxy进程会创建用户需要运行的进程
   // 需要运行的进程由--run后面跟的参数指定
   // 这个proxy_pid实际上可以理解成沙箱内部的全权负责人
-  proxy_pid =
-      clone(box_proxy, // Function to execute as the body of the new process
-            (void *)((uintptr_t)argv &
-                     ~(uintptr_t)15), // Pass our stack, aligned to 16-bytes
-            // SIGCHLD：表示子进程终止时将向父进程发送 SIGCHLD 信号。
-            SIGCHLD | CLONE_NEWIPC | (share_net ? 0 : CLONE_NEWNET) |
-                CLONE_NEWNS | CLONE_NEWPID,
-            argv); // Pass the arguments
+  proxy_pid = clone(
+      box_proxy, // Function to execute as the body of the new process
+      (void *)((uintptr_t)argv &
+               ~(uintptr_t)15), // Pass our stack, aligned to 16-bytes
+      /**
+       *SIGCHLD：表示子进程结束时向父进程发送 SIGCHLD 信号。
+        CLONE_NEWIPC：在新的 IPC 命名空间中启动进程。
+        CLONE_NEWNET：创建新的网络命名空间（如果 share_net 为 false）。
+        CLONE_NEWNS：创建新的挂载（文件系统）命名空间。
+        CLONE_NEWPID：创建新的 PID 命名空间，使得新进程拥有独立的进程号空间。
+       */
+      SIGCHLD | CLONE_NEWIPC | (share_net ? 0 : CLONE_NEWNET) | CLONE_NEWNS |
+          CLONE_NEWPID,
+      argv); // Pass the arguments
   if (proxy_pid < 0)
     die("Cannot run proxy, clone failed: %m");
   // 在正常情况下，proxy进程在经过execve系统调用的改造以后，应该执行不同的代码路径，而不是到达这个错误处理
@@ -1017,6 +1035,10 @@ int main(int argc, char **argv) {
       box_id = opt_uint(optarg);
       break;
     case 'c':
+      //-c, --chdir=dir
+      // Change directory to dir before executing the program. This path must be
+      // sandbox的root是/var/local/lib/isolate/0/root/box
+      // relative to the root of the sandbox.
       set_cwd = optarg;
       break;
     case OPT_CG:
@@ -1177,7 +1199,6 @@ int main(int argc, char **argv) {
   // set file permission :666-022 = 644
   // set directory permission :777-022 =755
   // umask影响的是umask()这条代码以后创建的文件的权限
-  // 至于为什么选择umask选择022，这个是linux上umask的默认设置，这里遵循linux的默认设置
   umask(022);
 
   // ignore it ternamally
@@ -1186,6 +1207,8 @@ int main(int argc, char **argv) {
   cf_parse();
 
   // 初始化box的基本设置:这个初始化设置主要就是创建默认沙箱对应的文件夹
+  // 创建沙箱对应的文件夹:/var/local/lib/isolate/0/
+  // 并改变当前工作目录到/var/local/lib/isolate/0/
   box_init();
   // TODO:
   // 和control groups相关的初始化，暂时先不看
@@ -1195,11 +1218,13 @@ int main(int argc, char **argv) {
   case OPT_INIT:
     if (optind < argc)
       usage("--init mode takes no parameters\n");
+    // 这里会创建box文件夹
     init();
     break;
   case OPT_RUN:
     if (optind >= argc)
       usage("--run mode requires a command to run\n");
+    // TODO:
     run(argv + optind);
     break;
   case OPT_CLEANUP:

@@ -1,4 +1,5 @@
 #! /usr/bin/bash
-for file in *.c *.h *.cf; do
-	cp "$file" "../tmp/${file}.txt"
-done
+make clear
+make isolate
+sudo ./isolate --cleanup
+sudo ./isolate --init
