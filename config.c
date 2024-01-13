@@ -87,7 +87,9 @@ static void cf_check(void) {
     cf_err("Configuration is not complete");
 }
 
+// 这个是用来解析配置文件的函数
 void cf_parse(void) {
+  // CONFIG_FILE 貌似可以通过make命令来设置
   FILE *f = fopen(CONFIG_FILE, "r");
   if (!f)
     die("Cannot open %s: %m", CONFIG_FILE);

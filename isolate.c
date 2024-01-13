@@ -273,6 +273,7 @@ struct signal_rule {
   enum { SIGNAL_IGNORE, SIGNAL_INTERRUPT, SIGNAL_FATAL } action;
 };
 
+// 用来设置isolate在面对不同信号时应采取的应对措施：主要分为三种应对措施：SIGNAL_IGNORE、SIGNAL_INTERRUPT、SIGNAL_FATAL
 static const struct signal_rule signal_rules[] = {
     {SIGHUP, SIGNAL_INTERRUPT},  {SIGINT, SIGNAL_INTERRUPT},
     {SIGQUIT, SIGNAL_INTERRUPT}, {SIGILL, SIGNAL_FATAL},
@@ -508,6 +509,7 @@ static void box_keeper(void) {
 /*** The process running inside the box ***/
 
 static void setup_root(void) {
+  // 第一个数字0是一个前缀，用来明确指定这个数是一个八进制数
   if (mkdir("root", 0750) < 0 && errno != EEXIST)
     die("mkdir('root'): %m");
 
@@ -526,6 +528,7 @@ static void setup_root(void) {
 
   apply_dir_rules(default_dirs);
 
+  // 将/var/local/lib/isolate/0/root设置为当前用户进程能够使用的系统根目录
   if (chroot("root") < 0)
     die("Chroot failed: %m");
 
@@ -553,12 +556,19 @@ static void setup_net(void) {
 }
 
 static void setup_credentials(void) {
+  // 设置进程的实际、有效和保存的组ID为 box_gid
   if (setresgid(box_gid, box_gid, box_gid) < 0)
     die("setresgid: %m");
+  // 清空当前进程的辅助组列表
   if (setgroups(0, NULL) < 0)
     die("setgroups: %m");
+  // 设置进程的实际、有效和保存的用户ID为 box_gid
   if (setresuid(box_uid, box_uid, box_uid) < 0)
     die("setresuid: %m");
+  // 将进程移动到一个新的进程组中，这样就可以独立于启动它的进程组进行信号处理
+  // setpgrp()等价于setpgrp(0,0)：
+  //      第一个参数是进程pid,指定了需要设置的进程。0代表执行这个函数的进程
+  //      第二个参数是新进程组的pgid。0代表将被影响进程的pid作为新的pgid（前提是这个progress必须存在）
   setpgrp();
   if (tty_hack && isatty(1)) {
     // If stdout is a tty, make us the foreground process group
@@ -618,9 +628,15 @@ static void setup_rlimits(void) {
 #undef RLIM
 }
 
+// 用户进程会执行的代码
 static int box_inside(char **args) {
+  // 正式执行用户进程之前的一些初始化工作
   cg_enter();
+  // 设置当前用户进程的root目录。
+  // 使用chroot实现：将root文件夹设置为用户进程的系统跟目录
+  // 这里挂载的文件系统只能在box_gid和box_uid的权限下才能看到
   setup_root();
+  // TODO:设置网络
   setup_net();
   setup_rlimits();
   setup_credentials();
@@ -646,6 +662,7 @@ static void setup_orig_credentials(void) {
     die("setresuid: %m");
 }
 
+// proxy进程的进程体，proxy进程被创建以后应该从这里开始运行
 // 负责在隔离的环境中启动用户指定的程序，并管理其执行过程
 static int box_proxy(void *arg) {
   char **args = arg;
@@ -653,10 +670,13 @@ static int box_proxy(void *arg) {
   write_errors_to_fd = error_pipes[1];
   close(error_pipes[0]);
   close(status_pipes[0]);
+  // TODO:
   meta_close();
   reset_signals();
 
+  // proxy进程开始创建box中的用户进程
   // 正常情况下，这个是box中用户进程的id（这个进程是由proxy进程创建的
+  // box中的用户进程id
   pid_t inside_pid = fork();
   if (inside_pid < 0)
     die("Cannot run process, fork failed: %m");
@@ -684,12 +704,17 @@ static int box_proxy(void *arg) {
   _exit(0);
 }
 
+// 初始化box的基本设置:这个初始化设置主要就是创建默认沙箱对应的文件夹
 static void box_init(void) {
   if (box_id < 0 || box_id >= cf_num_boxes)
     die("Sandbox ID out of range (allowed: 0-%d)", cf_num_boxes - 1);
+  // cf_first_uid and cf_first_gid are set by the config file parser
+  // box_id默认是0
+  // box_id是默认沙箱的id
   box_uid = cf_first_uid + box_id;
   box_gid = cf_first_gid + box_id;
 
+  // 创建沙箱对应的文件夹:/var/local/lib/isolate/0/
   snprintf(box_dir, sizeof(box_dir), "%s/%d", cf_box_root, box_id);
   make_dir(box_dir);
   if (chdir(box_dir) < 0)
@@ -774,6 +799,9 @@ static void find_box_pid(void) {
   fclose(f);
 }
 
+// argv传过来的是用户需要运行的进程的路径
+// TODO: 这个路径是相对于哪个文件夹的？是相对于box_root的吗？感觉应该是的
+// 这个可执行文件的名称应该是什么？我用./t为啥不对呢
 static void run(char **argv) {
   if (!dir_exists("box"))
     die("Box directory not found, did you run `%s --init'?", self_name());
@@ -782,6 +810,8 @@ static void run(char **argv) {
     close_all_fds();
 
   // 效果类始于 chown -R box_uid:box_gid box
+  // 一个uid实际上就是对应了一种权限
+  // TODO: 有一个疑问，box前面的路径是什么时候进入的？
   chowntree("box", box_uid, box_gid, false);
   cleanup_ownership = 1;
 
@@ -799,6 +829,7 @@ static void run(char **argv) {
   // proxy_pid），它在多个不同的命名空间中运行
   // 根据代码来看，proxy进程会创建用户需要运行的进程
   // 需要运行的进程由--run后面跟的参数指定
+  // 这个proxy_pid实际上可以理解成沙箱内部的全权负责人
   proxy_pid =
       clone(box_proxy, // Function to execute as the body of the new process
             (void *)((uintptr_t)argv &
@@ -809,12 +840,13 @@ static void run(char **argv) {
             argv); // Pass the arguments
   if (proxy_pid < 0)
     die("Cannot run proxy, clone failed: %m");
-  // TODO: 为什么在子进程中就是die呢？
+  // 在正常情况下，proxy进程在经过execve系统调用的改造以后，应该执行不同的代码路径，而不是到达这个错误处理
   if (!proxy_pid)
     die("Cannot run proxy, clone returned 0");
 
   // TODO:从 status_pipes 管道中读取user进程的 PID（在新命名空间中的 PID）
-  // status_pipes 中进程id就是proxy创建的用户进程的id
+  // status_pipes 中的进程id就是proxy创建的用户进程的id
+  // 既然box_pid_inside_ns和box_pid是一样的，为什么还要区分这两个变量呢？
   pid_t box_pid_inside_ns;
   int n = read(status_pipes[0], &box_pid_inside_ns, sizeof(box_pid_inside_ns));
   if (n != sizeof(box_pid_inside_ns))
@@ -1116,11 +1148,17 @@ int main(int argc, char **argv) {
     usage("Options related to control groups require --cg to be set.\n");
 
   // get user id, privileged id is 0
+  // 这个函数返回调用进程的有效用户ID（Effective User ID）。
+  // 如果一个普通用户运行一个设置了setuid位且属于root用户的程序，那么geteuid()将返回0（root用户的ID），而getuid()仍然返回该普通用户的ID。
   if (geteuid())
     die("Must be started as root");
   // get group id, privileged id is 0
   if (getegid() && setegid(0) < 0)
     die("Cannot switch to root group: %m");
+  // TODO: getuid 和geteuid的区别?
+  // 保存原始UID和GID可能是为了在沙盒执行结束后恢复原始权限
+  // 初次运行，这里应该都是0
+  // 其实gid uid我没有太搞懂，这个应该在鸟叔的linux私房菜中可以找到
   orig_uid = getuid();
   orig_gid = getgid();
 
@@ -1139,14 +1177,18 @@ int main(int argc, char **argv) {
   // set file permission :666-022 = 644
   // set directory permission :777-022 =755
   // umask影响的是umask()这条代码以后创建的文件的权限
+  // 至于为什么选择umask选择022，这个是linux上umask的默认设置，这里遵循linux的默认设置
   umask(022);
 
   // ignore it ternamally
-  // TODO:makefile中配置的configuration
-  // file默认情况下是空的，这时候不应该使用default.cf中的配置吗？为啥直接报错呢？
+  // 解析配置文件
+  // 配置文件的默认内容是default.cf,这个是在install命令执行的时候从default.cf中拷贝的
   cf_parse();
 
+  // 初始化box的基本设置:这个初始化设置主要就是创建默认沙箱对应的文件夹
   box_init();
+  // TODO:
+  // 和control groups相关的初始化，暂时先不看
   cg_init();
 
   switch (mode) {
